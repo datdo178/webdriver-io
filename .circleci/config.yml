@@ -10,7 +10,7 @@ jobs:
       - node/install:
           install-yarn: true
           node-version: '16.13'
-      - note/test:
+      - node/test:
           test-results-for: mocha
       - run: node --version
      
