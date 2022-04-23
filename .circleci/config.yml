@@ -10,5 +10,7 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: git clone https://github.com/datdo178/webdriver-io.git
+            - run: git checkout
             - run: npm install
       - run: npx wdio
