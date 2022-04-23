@@ -6,4 +6,3 @@ workflows:
     jobs:
       - node/test:
           test-results-for: mocha
-          requires: install-node-example
