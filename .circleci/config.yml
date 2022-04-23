@@ -1,8 +1,8 @@
 version: '2.1'
 orbs:
-  node: circleci/node@5.0.2
+  node: circleci/node@x.y
 workflows:
-  test_my_app:
+  test:
     jobs:
       - node/test:
           test-results-for: mocha
