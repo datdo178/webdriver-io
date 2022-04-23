@@ -5,7 +5,7 @@ orbs:
 jobs:
   run-test:
     docker:
-      - image: 'cimg/base:stable'
+      - image: 'cimg/node:18.0.0-browsers'
     steps:
       - checkout
       - browser-tools/install-browser-tools
