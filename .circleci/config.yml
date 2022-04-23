@@ -1,8 +1,20 @@
 version: '2.1'
 orbs:
   node: circleci/node@5.0.2
-workflows:
-  test:
-    jobs:
-      - node/test:
+jobs:
+  node-example:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - note/test:
           test-results-for: mocha
+      - run: node --version
+     
+workflows:
+  test_my_app:
+    jobs:
+      - node-example
