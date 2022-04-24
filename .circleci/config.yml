@@ -19,6 +19,17 @@ jobs:
       - run: node --version
       - run: npm install
       - run: npx wdio
+      - run: echo "pipeline.id - <<pipeline.id>>"
+      - run: echo "pipeline.number - <<pipeline.number>>"
+      - run: echo "pipeline.project.git_url - <<pipeline.project.git_url>>"
+      - run: echo "pipeline.project.type - <<pipeline.project.type>>"
+      - run: echo "pipeline.git.tag - <<pipeline.git.tag>>"
+      - run: echo "pipeline.git.branch - <<pipeline.git.branch>>"
+      - run: echo "pipeline.git.revision - <<pipeline.git.revision>>"
+      - run: echo "pipeline.git.base_revision - <<pipeline.git.base_revision>>"
+      - run: echo "pipeline.trigger_source - <<pipeline.trigger_source>>"
+      - run: echo "pipeline.schedule.name - <<pipeline.schedule.name>>"
+      - run: echo "pipeline.schedule.id - <<pipeline.schedule.id>>"
 workflows:
   test_my_app:
     jobs:
