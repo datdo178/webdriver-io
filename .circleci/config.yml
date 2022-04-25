@@ -36,4 +36,4 @@ workflows:
       - print:
          matrix:
           parameters:
-           var: [<<pipeline.id>>, <<pipeline.number>>, <<pipeline.project.git_url>>, <<pipeline.project.type>>]
+           var: [<<pipeline.id>>, <<pipeline.project.git_url>>, <<pipeline.project.type>>]
