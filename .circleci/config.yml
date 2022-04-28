@@ -1,4 +1,4 @@
-version: '2.1'
+version: 2.1
 orbs:
   node: circleci/node@5.0.2
   browser-tools: circleci/browser-tools@1.2.5
@@ -36,8 +36,10 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - run-test
       - print:
-         matrix:
-          parameters:
-           var: [<<pipeline.id>>, <<pipeline.project.git_url>>, <<pipeline.project.type>>]
+          matrix:
+            parameters:
+              var: [<<pipeline.id>>, <<pipeline.project.git_url>>, <<pipeline.project.type>>]
+      - run-test:
+          requires:
+            - print
