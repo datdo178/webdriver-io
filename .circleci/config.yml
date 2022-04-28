@@ -9,16 +9,20 @@ jobs:
     steps:
       - browser-tools/install-browser-tools
       - checkout
-      - run: |
-          node --version
-          java --version
-          google-chrome --version
+      - run:
+          name: Version checks
+          command: |
+            node --version
+            java --version
+            google-chrome --version
       - node/install:
           install-yarn: true
           node-version: '16.13'
-      - run: node --version
-      - run: npm install
-      - run: npx wdio
+      - run:
+          name: Install project packages
+          command: |
+            npm install
+            npx wdio
   print:
     parameters:
       var:
